@@ -1,0 +1,64 @@
+/* _controls.scss */
+
+.controls {
+	display: block;
+	margin-top: 32px;
+	width: 100%;
+
+	.range {
+		display: flex;
+
+		#slider {
+			flex-basis: 100%;
+			margin: 0 16px;
+		}
+
+		span {
+			display: inline-block;
+			text-align: center;
+			width: 32px;
+		}
+	}
+
+	#player {
+		display: flex;
+		justify-content: center;
+		margin-top: 16px;
+		width: 100%;
+
+		span {
+			cursor: pointer;
+			display: block;
+			height: 24px;
+			margin: 0 8px;
+			width: 24px;
+
+			&.disabled {
+				filter: invert(100%);
+				opacity: 0.25;
+				pointer-events: none;
+				user-select: none;
+			}
+
+			&.inactive {
+				display: none;
+			}
+		}
+
+		#rewind {
+			background: url('../img/start.svg') center/contain no-repeat;
+		}
+
+		#play {
+			background: url('../img/play.svg') center/contain no-repeat;
+		}
+
+		#pause {
+			background: url('../img/pause.svg') center/contain no-repeat;
+		}
+
+		#fast-forward {
+			background: url('../img/end.svg') center/contain no-repeat;
+		}
+	}
+}

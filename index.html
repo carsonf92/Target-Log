@@ -1,0 +1,173 @@
+<!--
+Sharpen the arrows, fill the quivers!
+
+Jeremiah 51:11
+-->
+
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Target Log</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link href="/img/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/img/favicon/android-chrome-192x192.png" sizes="192x192" />
+    <meta name="msapplication-square70x70logo" content="/img/favicon/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="/img/favicon/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="/img/favicon/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="/img/favicon/largetile.png" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<div class="container">
+
+    <section id="visuals">
+        <div id="target">
+            <div class="ring white" score="1"></div>
+            <div class="ring white" score="2"></div>
+            <div class="ring black" score="3"></div>
+            <div class="ring black" score="4"></div>
+            <div class="ring blue" score="5"></div>
+            <div class="ring blue" score="6"></div>
+            <div class="ring red" score="7"></div>
+            <div class="ring red" score="8"></div>
+            <div class="ring gold" score="9"></div>
+            <div class="ring gold ten-ring" score="10"></div>
+            <div class="ring x-ring" score="X"></div>
+            <div id="mouse-coordinates">
+                <div>X: <span id="mouse-x">0.0</span></div>
+                <div>Y: <span id="mouse-y">0.0</span></div>
+            </div>
+            <div id="group-center-indicator"></div>
+        </div>
+        <div class="controls">
+            <div class="range">
+                <span id="current">0</span>
+                <input id="slider" type="range" min="0" max="0" value="0">
+                <span id="total">0</span>
+            </div>
+            <div id="player">
+                <span id="rewind" class="disabled"></span>
+                <span id="play" class="disabled"></span>
+                <span id="pause" class="inactive"></span>
+                <span id="fast-forward" class="disabled"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="data">
+        <div class="cards">
+            <table id="input" class="card">
+                <tr>
+                    <th>INPUT</th>
+                </tr>
+                <tr>
+                    <td>
+                        X:<input type="text" id="x-coordinate" />
+                        Y:<input type="text" id="y-coordinate" />
+                        <input type="submit" value="enter" class="button disabled" title="Submit coordinates" id="enter-coordinates" />
+                    </td>
+                </tr>
+            </table>
+            <table id="stats" class="card">
+                <tr>
+                    <th>STATS</th>
+                </tr>
+                <tr>
+                    <td>Total Score:<span id="total-score">0/0</span></td>
+                </tr>
+                <tr>
+                    <td>Average Score:<span id="average-score">0.0</span></td>
+                </tr>
+                <tr>
+                    <td>Average Variance:<span id="average-variance">0.0</span></td>
+                    <tr>
+                        <td>Group Center:<span id="group-center">0.0, 0.0</span></td>
+                    </tr>
+                </table>
+                <table id="shots" class="card">
+                    <tr>
+                        <th colspan="4">SHOTS<!--<a id="clear-log" class="button" title="Erase shot history">Clear Log</a>--></th>
+                    </tr>
+                    <tr>
+                        <td>#</td>
+                        <td>Score</td>
+                        <td>Coordinates</td>
+                        <td>Variance</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<div class="info">
+    <span>Designed and developed by Carson Ford |<a id="instagram" href="//www.instagram.com/carsonf92/" title="Instagram" target="_blank"></a><a id="dribbble" href="//dribbble.com/carsonf92" title="Dribbble" target="_blank"></a><a id="mail" href="mailto:carson@cfdesigner.com" title="Email" target="_blank"></a></span>
+</div>
+
+<!-- Scripts -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics -->
+<script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+</html>

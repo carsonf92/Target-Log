@@ -1,0 +1,33 @@
+/* _typography.scss */
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+body {
+	color: $white;
+	font-family: 'Source Code Pro', monospace;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+	color: $white;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+h2 {
+	color: $white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h3 {
+	color: $white;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+p {
+	color: $light;
+	font-size: 16px;
+}

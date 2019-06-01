@@ -1,0 +1,33 @@
+/* _buttons.scss */
+
+.button {
+	background: none;
+	border: 2px solid $white;
+	border-radius: 18px;
+	box-sizing: border-box;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Source Code Pro';
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0;
+	outline: none;
+	padding: 4px 0;
+	text-align: center;
+	text-transform: capitalize;
+	transition: all 0.2s ease;
+	width: 100px;
+
+	&:hover, &:focus {
+		background: $white;
+		color: $dark;
+	}
+
+	&.disabled {
+		background: none;
+		border-color: $dark;
+		color: $dark;
+		pointer-events: none;
+	}
+}

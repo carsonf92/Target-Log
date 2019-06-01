@@ -1,0 +1,81 @@
+/* _dashboard.scss */
+
+body {
+	align-items: center;
+	background: $dim;
+	color: $white;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	min-height: 720px;
+	position: relative;
+	width: 100vw;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	width: 960px;
+}
+
+#visuals {
+	width: 520px;
+}
+
+#data {
+	width: 360px;
+}
+
+.info {
+	bottom: 24px;
+	color: $bright;
+	font-size: 14px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+
+	a {
+		cursor: pointer;
+		display: inline-block;
+		height: 16px;
+		margin: 0 8px;
+		width: 16px;
+		vertical-align: sub;
+
+		&:hover {
+			color: white;
+			filter: brightness(10);
+		}
+	}
+
+	#instagram {
+		background: url('../img/instagram.svg') center/contain no-repeat;
+	}
+
+	#dribbble {
+		background: url('../img/dribbble.svg') center/contain no-repeat;
+	}
+
+	#mail {
+		background: url('../img/mail.svg') center/contain no-repeat;
+	}
+}
+
+@media (max-width: 920px) {
+	body {
+		height: auto;
+		padding: 56px 0 80px;
+	}
+
+	.container {
+		align-items: center;
+		flex-direction: column;
+		max-width: 90%;
+		width: 360px;
+	}
+
+	#visuals {
+		margin-bottom: 24px;
+		width: 100%;
+	}
+}
